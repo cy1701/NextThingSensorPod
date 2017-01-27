@@ -6,9 +6,10 @@
 #
 #######################################################
 
-
+#notes: AlarmIntruder - Flag for state 
 import os
-import time
+#import time
+from datetime import datetime
 import subprocess
 from w1thermsensor import W1ThermSensor #https://github.com/timofurrer/w1thermsensor
 import paho.mqtt.client as mqtt
@@ -22,11 +23,16 @@ mqttc = mqtt.Client()
 
 mqttc.username_pw_set(username="user", password="pass")
 
+x=1
+while True:
 # Testing GPIO 
-if GPIO.input("CSID0"):
-    print("HIGH")
-else:
-    print("LOW")
+   datetime.now().strftime('%M')
+   if GPIO.input("CSID0"):
+       print("HIGH")
+       If armed=1:
+           AlarmIntruder=1
+   else:
+       print("LOW")
 
 
 
